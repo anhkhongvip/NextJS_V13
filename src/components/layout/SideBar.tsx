@@ -1,9 +1,31 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import DashboardIcon from '../icons/DashboardICon';
+import Link from 'next/link';
+import { sidebarLinks } from "@/constants/general.const";
+import { useRouter } from 'next/router';
+interface ISidebarLinkProps {
+  link: string;
+  isActive: boolean;
+  title: string;
+  icon: React.ReactElement;
+}
 const SideBar = () => {
+  const router = useRouter();
+  const { pathname } = router;
   return (
-    <div>SideBar</div>
+    <div className='sidebar-wrapper w-[15.625rem] p-[0.9375rem_1.125rem]'>
+      {sidebarLinks.map((item) => (<SidebarLink title={item.title} icon={pathname === item.path ? item.iconActive : item.icon} link={item.path} isActive={pathname === item.path} key={item.title} />))}
+
+    </div>
   )
 }
 
-export default SideBar
+export default SideBar;
+
+function SidebarLink({ link, isActive, title, icon }: ISidebarLinkProps) {
+  return (
+    <Link href={link} className={`flex items-center gap-x-[0.625rem] text-base font-bold py-4 px-[1.4375rem] rounded-xl ${isActive ? 'text-white-color bg-primary-color' : ''} hover:text-white-color hover:bg-primary-color `}>
+      {icon}
+      {title}
+    </Link>)
+}

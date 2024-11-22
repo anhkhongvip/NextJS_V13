@@ -2,6 +2,7 @@ import React from 'react';
 import TopBar from './TopBar';
 import { Manrope } from 'next/font/google';
 import Head from 'next/head';
+import SideBar from './SideBar';
 
 type Props =  {
     children: React.ReactNode;
@@ -18,9 +19,14 @@ const LayoutMain = ({ children }: Props) => {
      <Head>
       <title>Yariga</title>
     </Head>
-    <div className={manrope.className}>
+    <div className={`${manrope.className}`}>
       <TopBar/>
-      {children}
+      <div className="flex">
+        <SideBar/>
+        <div className='bg-bg-color w-full min-h-screen'>
+          {children}
+        </div>
+      </div>
     </div>
     </>
   )

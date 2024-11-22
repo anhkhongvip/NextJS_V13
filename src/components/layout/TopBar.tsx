@@ -1,8 +1,13 @@
 import Image from 'next/image';
-import React from 'react'
-import SearchIcon from '../icon/SearchIcon';
+import React, { useCallback, useState } from 'react'
+import SearchIcon from '../icons/SearchIcon';
+import Input from '../input/Input';
 
 const TopBar = () => {
+    const [searchValue, setSearchValue] = useState<string>('');
+    const handleChange = useCallback((value: string, id: string) => {
+        setSearchValue(value)
+    }, [])
     return (
         <div className='top-bar__wrapper grid grid-cols-5 p-[0.9375rem_1.125rem] gap-[10px] items-center'>
             <div className="grid grid-cols-2 sm:grid-cols-1 gap-x-5 col-end-1 items-center">
@@ -21,8 +26,9 @@ const TopBar = () => {
                     <span className="logo-title font-bold text-[1.5625rem]/4">Yariga</span>
                 </div>
             </div>
-            <div className="search-wrapper col-start-2 w-[25.3125rem] hidden sm:flex">
+            <div className="search-wrapper col-start-2 w-[25.3125rem] h-[2.375rem] hidden sm:flex items-center bg-bg-color p-[0.625rem] gap-x-[0.625rem] rounded-lg">
                 <SearchIcon/>
+                <Input className="w-full text-xs" name="search" id='search' type="text" placeholder='Search Property, Customer etc' value={searchValue} onChange={handleChange}/>
             </div>
             <div className="grid grid-cols-2 col-start-[-1] items-center">
                 <div className="notification__wrapper">
