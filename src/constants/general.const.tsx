@@ -9,37 +9,37 @@ const sidebarLinks = [
     {
         title: 'Dashboard',
         icon: <DashboardIcon/>,
-        iconActive: <DashboardIcon fillColor="#FCFCFC"/>,
+        iconActive: <DashboardIcon/>,
         path: "/",
     },
     {
         title: 'Property',
         icon: <PropertyIcon/>,
-        iconActive: <PropertyIcon fillColor="#FCFCFC"/>,
+        iconActive: <PropertyIcon/>,
         path: "/property",
     },
     {
         title: 'Agent',
         icon: <AgentIcon/>,
-        iconActive: <AgentIcon fillColor="#FCFCFC"/>,
+        iconActive: <AgentIcon/>,
         path: "/agent",
     },
     {
         title: 'Review',
         icon: <ReviewIcon />,
-        iconActive: <ReviewIcon fillColor="#FCFCFC"/>,
+        iconActive: <ReviewIcon/>,
         path: "/review",
     },
     {
         title: 'Message',
         icon: <MessageIcon/>,
-        iconActive: <MessageIcon fillColor="#FCFCFC"/>,
+        iconActive: <MessageIcon/>,
         path: "/message",
     },
     {
         title: 'My Profile',
         icon: <ProfileIcon/>,
-        iconActive: <ProfileIcon fillColor="#FCFCFC"/>,
+        iconActive: <ProfileIcon/>,
         path: "/profile",
     }
 ];

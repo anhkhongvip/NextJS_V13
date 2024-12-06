@@ -24,7 +24,7 @@ export default SideBar;
 
 function SidebarLink({ link, isActive, title, icon }: ISidebarLinkProps) {
   return (
-    <Link href={link} className={`flex items-center gap-x-[0.625rem] text-base font-bold py-4 px-[1.4375rem] rounded-xl ${isActive ? 'text-white-color bg-primary-color' : ''} hover:text-white-color hover:bg-primary-color `}>
+    <Link href={link} className={`flex items-center gap-x-[0.625rem] text-base font-bold py-4 px-[1.4375rem] rounded-xl ease-in duration-100 ${isActive ? 'text-white-color bg-primary-color fill-white-color' : 'fill-[#808191] text-[#808191]'} hover:text-white-color hover:bg-primary-color hover:fill-white-color`}>
       {icon}
       {title}
     </Link>)

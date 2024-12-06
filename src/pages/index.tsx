@@ -1,12 +1,10 @@
-import Image from 'next/image'
-import Head from 'next/head'
+import ContainerPage from '@/components/common/ContainerPage'
+import CardTotal from '@/components/dashboard/card/total/CardTotal'
 
 export default function Home() {
   return (
-  <div className="container px-[18px]">
-    <div className="title font-bold mb-[3.375rem]">Dashboard</div>
-    <div className="main">
-      
-    </div>
-  </div>)
+    <ContainerPage title="Dashboard">
+      <CardTotal />
+    </ContainerPage>
+  )
 }
